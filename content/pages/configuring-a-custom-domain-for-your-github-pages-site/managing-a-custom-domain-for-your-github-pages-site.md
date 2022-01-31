@@ -40,14 +40,14 @@ The `dig` command, which can be used to verify correct configuration of DNS reco
 
 ## Configuring a subdomain
 
-To set up a `www` or custom subdomain, such as `www.example.com` or `blog.example.com`, you must add your domain in the repository settings, which will create a CNAME file in your site’s repository. After that, configure a CNAME record with your DNS provider.
+To set up a `www` or custom subdomain, such as `www.example.com` or `blog.example.com`, you must add your subdomain in the repository settings, which will create a CNAME file in your site’s repository. After that, configure a CNAME record with your DNS provider.
 
 {% data reusables.pages.navigate-site-repo %}
 {% data reusables.repositories.sidebar-settings %}
 {% data reusables.pages.sidebar-pages %}
-4. Under "Custom domain", type your custom domain, then click **Save**. This will create a commit that adds a _CNAME_ file in the root of your publishing source.
+4. Under "Custom domain", type your custom subdomain, then click **Save**. This will create a commit that adds a _CNAME_ file in the root of your publishing source.
   ![Save custom domain button](/assets/images/help/pages/save-custom-subdomain.png)
-5. Navigate to your DNS provider and create a `CNAME` record that points your subdomain to the default domain for your site. For example, if you want to use the subdomain `www.example.com` for your user site, create a `CNAME` record that points `www.example.com` to `<user>.github.io`. If you want to use the subdomain `www.anotherexample.com` for your organization site, create a `CNAME` record that points `www.anotherexample.com` to `<organization>.github.io`. The `CNAME` record should always point to `<user>.github.io` or `<organization>.github.io`, excluding the repository name. {% data reusables.pages.contact-dns-provider %} {% data reusables.pages.default-domain-information %}
+5. Navigate to your DNS provider and create a `CNAME` record that points the custom subdomain to `<user>.github.io` or `<organization>.github.io` (use the same value for all repositories owned by a user or organization). For example, to use the subdomain `blog.example.com` for a repository owned by user `foo`, create a `CNAME` record that points `blog.example.com` to `foo.github.io`. {% data reusables.pages.contact-dns-provider %} {% data reusables.pages.default-domain-information %}
 
 {% indented_data_reference reusables.pages.wildcard-dns-warning spaces=3 %}
 {% data reusables.command_line.open_the_multi_os_terminal %}
